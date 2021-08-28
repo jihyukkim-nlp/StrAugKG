@@ -8,12 +8,12 @@ Targeting **keyphrase generation** task,
 given a document as input,
 we first extend the given document with related but absent keyphrases from existing keyphrases, to augment missing contexts (_generating structure_), and then, build a graph of keyphrases and the given document, to obtain structure-aware representation of the augmented text (_encoding structure_).
 
-<p align="center">
+<!-- <p align="center">
   <img align="center" src="docs/images/overall_approach.png" />
 </p>
 <p align="center">
   <b>Figure:</b> Overall approach of structure-augmented keyphrase generation on two scenarios (closed/open-set keyphrase).
-</p>
+</p> -->
 
 
 
