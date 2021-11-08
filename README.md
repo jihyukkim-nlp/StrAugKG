@@ -2,7 +2,7 @@
 
 This PyTorch code was used in the experiments of the research paper.
 
-* [**Structure-Augmented Keyphrase Generation**.]() Jihyuk Kim*, Myeongho Jeong*, Seungtaek Choi, and Seung-won Hwang (*equal contribution) (EMNLP'21).
+* [**Structure-Augmented Keyphrase Generation**.]() Jihyuk Kim, Myeongho Jeong, Seungtaek Choi, and Seung-won Hwang (EMNLP'21).
 
 Targeting **keyphrase generation** task, 
 given a document as input,
