@@ -1,3 +1,7 @@
+# Coming soon
+
+I'm sorry for delay. I will share codes as soon as possible (maybe by 11. 20.).
+
 # Structure-Augmented Keyphrase Generation
 
 This PyTorch code was used in the experiments of the research paper.
