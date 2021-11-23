@@ -1,6 +1,6 @@
 data/
 backup/
 __pycache__
-scientific_publications/model/
-scientific_publications/exp/
-scientific_publications/pred/
+open_set/model/
+open_set/exp/
+open_set/pred/
