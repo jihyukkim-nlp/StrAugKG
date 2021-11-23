@@ -1,0 +1,6 @@
+data/
+backup/
+__pycache__
+scientific_publications/model/
+scientific_publications/exp/
+scientific_publications/pred/
