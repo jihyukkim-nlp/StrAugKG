@@ -19,7 +19,8 @@ We used preprocessed dataset from [KG-KE-KR-M](https://github.com/Chen-Wang-CUHK
 
 For experiments, you can follow the scripts below.
 
-### 1. Download & Preprocess data
+**1. Download & Preprocess data**
+
 ```bash
 wget https://www.dropbox.com/s/lgeza7owhn9dwtu/Processed_data_for_onmt.zip?dl=1
 unzip Processed_data_for_onmt.zip\?dl\=1 
@@ -52,7 +53,7 @@ python preprocess.py -data_dir ../data/kp20k_filtered_title -vocab_size 50000 -u
 cd ../
 ```
 
-### 2. Training
+**2. Training**
 
 ```bash
 cd open_set
@@ -64,7 +65,7 @@ source train.sh [device] [enc_layers] [title]
 * \[**title**\] denotes whether to use title information. For example, ``source train.sh 0 3 title`` uses title information, and ``source train.sh 0 3`` do not use title.
 
 
-### 3. Prediction and Evaluation
+**3. Prediction and Evaluation**
 
 ```bash
 cd open_set
