@@ -10,9 +10,9 @@ we first extend the given document with related but absent keyphrases from exist
 
 If there are any questions, please send Jihyuk Kim an email: jihyukkim@yonsei.ac.kr.
 
-## Open-set KG
+## Open set KG
 
-For open-set KG, we experimented using KP20k, scientific publication dataset.
+For open set KG, we experimented using KP20k, scientific publication dataset.
 Most of the codes are adapted from [keyphrase-generation-rl](https://github.com/kenchan0226/keyphrase-generation-rl) (Neural Keyphrase Generation via Reinforcement Learning with Adaptive Rewards. ACL 2019. Chan et al).
 We used preprocessed dataset from [KG-KE-KR-M](https://github.com/Chen-Wang-CUHK/KG-KE-KR-M) (An Integrated Approach for Keyphrase Generation via Exploring the Power of Retrieval and Extraction. NAACL 2019. Chen et al).
 <!-- ([Link](https://www.dropbox.com/s/lgeza7owhn9dwtu/Processed_data_for_onmt.zip?dl=1)) -->
@@ -73,9 +73,18 @@ source predict.sh [device] [enc_layers] [title]
 ```
 
 
+## Closed set KG
+For closed set KG, we experimented using social media posts such as Twitter, Weibo, and StackExchange.
+We used the preprocessed datasets from  [TAKG](https://github.com/yuewang-cuhk/TAKG).
 
+**1. Download & Preprocess data**
+To-do
 
+**2. Training**
+To-do
 
+**3. Prediction and Evaluation**
+To-do
 
 
 ### Cite the Paper!
