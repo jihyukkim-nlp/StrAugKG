@@ -1,16 +1,80 @@
-# Coming soon
-
-I'm sorry for delay. I will share codes as soon as possible (maybe by 11. 20.).
-
 # Structure-Augmented Keyphrase Generation
 
 This PyTorch code was used in the experiments of the research paper.
 
-* [**Structure-Augmented Keyphrase Generation**.]() Jihyuk Kim, Myeongho Jeong, Seungtaek Choi, and Seung-won Hwang (EMNLP'21).
+* [**Structure-Augmented Keyphrase Generation**.](https://aclanthology.org/2021.emnlp-main.209.pdf) Jihyuk Kim, Myeongho Jeong, Seungtaek Choi, and Seung-won Hwang (EMNLP'21).
 
 Targeting **keyphrase generation** task, 
 given a document as input,
 we first extend the given document with related but absent keyphrases from existing keyphrases, to augment missing contexts (_generating structure_), and then, build a graph of keyphrases and the given document, to obtain structure-aware representation of the augmented text (_encoding structure_).
+
+
+## Open-set KG
+
+For open-set KG, we experimented using KP20k, scientific publication dataset.
+Most of the codes are adapted from [keyphrase-generation-rl](https://github.com/kenchan0226/keyphrase-generation-rl) (Neural Keyphrase Generation via Reinforcement Learning with Adaptive Rewards. ACL 2019. Chan et al).
+We used preprocessed ([Link](https://www.dropbox.com/s/lgeza7owhn9dwtu/Processed_data_for_onmt.zip?dl=1)) (An Integrated Approach for Keyphrase Generation via Exploring the Power of Retrieval and Extraction. NAACL 2019. Chen et al).
+
+For experiments, you can follow the scripts below.
+
+### 1. Download & Preprocess data
+```bash
+wget https://www.dropbox.com/s/lgeza7owhn9dwtu/Processed_data_for_onmt.zip?dl=1
+unzip Processed_data_for_onmt.zip\?dl\=1 
+rm Processed_data_for_onmt.zip\?dl\=1 
+
+mkdir -p data/kp20k_filtered
+# train data
+cp data/Processed_data_for_onmt/Training/word_kp20k_training_context_filtered.txt data/kp20k_filtered/train_src.txt
+cp data/Processed_data_for_onmt/Training/word_kp20k_training_context_nstpws_sims_retrieved_keyphrases_filtered.txt data/kp20k_filtered/train_ret.txt
+cp data/Processed_data_for_onmt/Training/word_kp20k_training_keyword_filtered.txt data/kp20k_filtered/train_trg.txt
+# validation data
+cp data/Processed_data_for_onmt/Validation/word_kp20k_validation_context_filtered.txt data/kp20k_filtered/valid_src.txt
+cp data/Processed_data_for_onmt/Validation/word_kp20k_validation_context_nstpws_sims_retrieved_keyphrases_filtered.txt data/kp20k_filtered/valid_ret.txt
+cp data/Processed_data_for_onmt/Validation/word_kp20k_validation_keyword_filtered.txt data/kp20k_filtered/valid_trg.txt
+# test data
+cp data/Processed_data_for_onmt/Testing/word_kp20k_testing_context.txt data/kp20k_filtered/test_src.txt
+cp data/Processed_data_for_onmt/Testing/word_kp20k_testing_context_nstpws_sims_retrieved_keyphrases_filtered.txt data/kp20k_filtered/test_ret.txt
+cp data/Processed_data_for_onmt/Testing/word_kp20k_testing_keyword.txt data/kp20k_filtered/test_trg.txt
+
+rm -r data/Processed_data_for_onmt*
+
+# Preprocessing
+# w/o title
+cd open_set
+python preprocess.py -data_dir ../data/kp20k_filtered -vocab_size 50000
+# w/ title
+mkdir -p ../data/kp20k_filtered_title
+cp ../data/kp20k_filtered/*.txt ../data/kp20k_filtered_title/
+python preprocess.py -data_dir ../data/kp20k_filtered_title -vocab_size 50000 -use_title
+cd ../
+```
+
+### 2. Training
+
+```bash
+cd open_set
+source train.sh [device] [enc_layers] [title]
+```
+	
+* \[**device**\] denotes GPU index, used as ``CUDA_VISIBLE_DEVICES=$device``
+* \[**enc_layers**\] denotes the number of GCN layers. We used 3 in our experiments.
+* \[**title**\] denotes whether to use title information.
+
+
+### 3. Prediction and Evaluation
+
+```bash
+cd open_set
+source predict.sh [device] [enc_layers] [title]
+```
+
+
+
+
+
+
+
 
 <!-- <p align="center">
   <img align="center" src="docs/images/overall_approach.png" />
