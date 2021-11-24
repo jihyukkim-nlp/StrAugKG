@@ -73,7 +73,9 @@ source predict.sh [device] [enc_layers] [title]
 ```
 
 
-## Closed set KG
+
+
+<!-- ## Closed set KG
 For closed set KG, we experimented using social media posts such as Twitter, Weibo, and StackExchange.
 We used the preprocessed datasets from  [TAKG](https://github.com/yuewang-cuhk/TAKG).
 
@@ -84,10 +86,12 @@ To-do
 To-do
 
 **3. Prediction and Evaluation**
-To-do
+To-do -->
 
 
-### Cite the Paper!
+
+
+## Cite the Paper!
 
 To cite the paper splits, please use this BibTex:
 
