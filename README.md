@@ -8,6 +8,7 @@ Targeting **keyphrase generation** task,
 given a document as input,
 we first extend the given document with related but absent keyphrases from existing keyphrases, to augment missing contexts (_generating structure_), and then, build a graph of keyphrases and the given document, to obtain structure-aware representation of the augmented text (_encoding structure_).
 
+If there are any questions, please send Jihyuk Kim an email: jihyukkim@yonsei.ac.kr.
 
 ## Open-set KG
 
@@ -73,6 +74,21 @@ source predict.sh [device] [enc_layers] [title]
 
 
 
+
+
+### Cite the Paper!
+
+To cite the paper splits, please use this BibTex:
+
+```
+@inproceedings{kim2021structure,
+  title={Structure-Augmented Keyphrase Generation},
+  author={Kim, Jihyuk and Jeong, Myeongho and Choi, Seungtaek and Hwang, Seung-won},
+  booktitle={Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing},
+  pages={2657--2667},
+  year={2021}
+}
+```
 
 
 
@@ -147,5 +163,5 @@ To cite the paper/code/data splits, please use this BibTex:
 }
 ``` -->
 
-If there are any questions, please send Jihyuk Kim an email: jihyukkim@yonsei.ac.kr.
+
 
