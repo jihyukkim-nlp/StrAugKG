@@ -13,7 +13,7 @@ we first extend the given document with related but absent keyphrases from exist
 
 For open-set KG, we experimented using KP20k, scientific publication dataset.
 Most of the codes are adapted from [keyphrase-generation-rl](https://github.com/kenchan0226/keyphrase-generation-rl) (Neural Keyphrase Generation via Reinforcement Learning with Adaptive Rewards. ACL 2019. Chan et al).
-We used preprocessed ([Link](https://www.dropbox.com/s/lgeza7owhn9dwtu/Processed_data_for_onmt.zip?dl=1)) (An Integrated Approach for Keyphrase Generation via Exploring the Power of Retrieval and Extraction. NAACL 2019. Chen et al).
+We used preprocessed dataset ([Link](https://www.dropbox.com/s/lgeza7owhn9dwtu/Processed_data_for_onmt.zip?dl=1)) (An Integrated Approach for Keyphrase Generation via Exploring the Power of Retrieval and Extraction. NAACL 2019. Chen et al).
 
 For experiments, you can follow the scripts below.
 
