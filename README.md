@@ -57,9 +57,9 @@ cd open_set
 source train.sh [device] [enc_layers] [title]
 ```
 	
-* \[**device**\] denotes GPU index, used as ``CUDA_VISIBLE_DEVICES=$device``
+* \[**device**\] denotes GPU index, used as ``CUDA_VISIBLE_DEVICES=$device``.
 * \[**enc_layers**\] denotes the number of GCN layers. We used 3 in our experiments.
-* \[**title**\] denotes whether to use title information.
+* \[**title**\] denotes whether to use title information. For example, ``source train.sh 0 3 title`` uses title information, and ``source train.sh 0 3`` do not use title.
 
 
 ### 3. Prediction and Evaluation
